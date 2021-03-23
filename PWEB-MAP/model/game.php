@@ -1,5 +1,5 @@
 <?php
-require_once 'model/model.php';
+require_once '../model/model.php';
 
 class Game extends Model
 {
@@ -27,6 +27,8 @@ public function newGame($player, $country,$code)
 
     public function getCountry()
     {
+
+        
         $sql = 'SELECT * FROM country
         ORDER BY RAND()
         LIMIT 1';
@@ -56,3 +58,4 @@ public function newGame($player, $country,$code)
         );
         $this->executeQuery($sql, $params);
     }
+}
